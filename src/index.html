@@ -19,3 +19,107 @@
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
 </head>
+<body>
+    <header class="main-header">
+        <section class="common-header common-header_main">
+          <h1 class="common-header__title common-header__title_main">NewsAnalyzer</h1>
+          <nav class="common-header__links common-header__link_main">
+            <div class="common-header-links-wrapper common-header-links-wrapper_main-one">
+              <a class="link link_main" href="./index.html">Главная</a>
+            </div>
+            <div class="common-header-links-wrapper">
+              <a class="link-change-main" href="./about.html">О проекте</a>
+            </div>
+          </nav>
+        </section>        
+    </header>
+
+    <section class="main-search">
+      <h2 class="main-search__title"> Что в мире творится?</h2>
+      <p class="main-search__description">Введите в поиске любую тему и узнайте, насколько популярной она была в новостях за прошедшую неделю</p>
+      <div class="main-search-wrapper">
+        <input type="text" class="main-search-wrapper__input" placeholder="Введите тему новости" required>
+        <button class="button button-search">Искать</button>
+      </div>
+    </section>
+
+    <section class="main-content">
+      <div class="main-conent__header">
+        <h3 class="main-header-caption">Результаты поиска</h3>
+        <a class="main-header-wrapper link" href="./paper">
+          <p class="main-header-wrapper__text">Посмотреть аналитику</p>
+          <p class="main-header-wrapper__arrow">&gt;</p>
+        </a>
+      </div>
+
+      <div class="preloader-load">
+        <i class="preloader-load__circle-preloader"></i>
+        <p class="preloader-load__caption">Идет поиск новостей...</p>        
+      </div>
+
+      <div class="preloader-empty">
+        <img class="preloader-empty__img" src="<%require('./image/not-found_v1.png')%>" alt="Информация не найдена">
+        <p class="preloader-empty__caption">Ничего не найдено</p>
+        <p class="preloader-empty__info">К сожалению по вашему запросу ничего не найдено</p>
+      </div>
+
+      <div class="request-error">
+        <p class="request-error__caption">Во время запроса произошла ошибка</p>
+        <p class="request-error__info">Возможно, проблема с соединением или сервер недоступен</p>
+        <p class="request-error__info">Подождите немного и попробуйте ещё раз</p>
+      </div>
+
+      <div class="main-content__result"></div>
+
+      <div class="main-content__more">
+        <div class="more-wrapper">
+          <button class="button button-more-cards"></button>
+          <p class="more-wrapper__text">Показать ещё</p>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="about-author">
+      <picture>
+        <source srcset="<%require('./images1440.jpg')%>" media="(min-width: 1440px)">
+        <source srcset="<%require('./images768.jpg')%>" media="(min-width: 768px)">
+        <source srcset="<%require('./images320.jpg')%>" media="(min-width: 320px)">
+        <img class="about-author__img" src="<%require('./images/1440.jpg')%>" alt="фотография автора">      
+      </picture>
+      <div class="about-author__text">
+        <h4 class="about-author__title">Об авторе</h4>
+        <p class="about-author__story">Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, чем вы занимаетесь,
+           какими технологиями разработки владеете.  Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, 
+           и чем можете помочь потенциальным заказчикам.
+        </p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer__copyright">&#169; 2020 Supersite</div>
+      <div class="footer__links">
+        <a class="url-link link" href="./index.html">Главная</a>
+        <a class="url-link link" href="./about.html">О проекте</a>
+        <a class="url-link link" href="https://praktikum.yandex.ru">Яндекс.Практикум</a>
+      </div>
+      <div class="footer__icons">
+        <a class="github link" href="https://github.com">
+          <picture>
+            <source srcset="<%require('./images/github.png')%>">
+              <img src="<%require('./images/github.png')%>" alt="иконка github">              
+          </picture>
+        </a>
+        <a class="facebook link" href="https://www.facebook.com/">
+          <picture>
+            <source srcset="<%require('./images/facebook.png')%>">
+              <img src="<%require('./images/facebook.png')%>" alt="иконка facebook"> 
+          </picture>        
+        </a>
+      </div>
+    </footer>
+
+    <script src="<%=htmlWebpackPlugin.files.chunk.main.entry %>"></script>
+
+</body>
+</html>
