@@ -11,13 +11,8 @@
   
   <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.chunks.about.css %>">
   
-  <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="<%=require(./images/favicon/favicon.svg)>">
+  
 </head>
 <body>
     <header class="common-header">        
@@ -58,9 +53,9 @@
 
     <section class="about-author">
       <picture>
-        <source srcset="<%=require('./images1440.jpg')%>" media="(min-width: 1440px)">
-        <source srcset="<%=require('./images768.jpg')%>" media="(min-width: 768px)">
-        <source srcset="<%=require('./images320.jpg')%>" media="(min-width: 320px)">
+        <source srcset="<%=require('./images/1440.jpg')%>" media="(min-width: 1440px)">
+        <source srcset="<%=require('./images/768.jpg')%>" media="(min-width: 768px)">
+        <source srcset="<%=require('./images/320.jpg')%>" media="(min-width: 320px)">
         <img class="about-author__img" src="<%require('./images/1440.jpg')%>" alt="фотография автора">      
       </picture>
       <div class="about-author__text">
