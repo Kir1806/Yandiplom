@@ -11,7 +11,7 @@
   
   <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.chunks.paper.css %>">
 
-  <link rel="icon" href="<%=require(./images/favicon/favicon.svg)>">  
+  <link rel="icon" href="<%=require('./images/favicon/favicon.png').default%>">  
 
 </head>
 <body>
@@ -139,14 +139,14 @@
     </a>
     <a class="facebook link" href="https://www.facebook.com/">
       <picture>
-        <source srcset="<%require('./images/facebook.png')%>">
-          <img src="<%require('./images/facebook.png')%>" alt="иконка facebook"> 
+        <source srcset="<%=require('./images/facebook.png').default%>">
+          <img src="<%=require('./images/facebook.png').default%>" alt="иконка facebook"> 
       </picture>        
     </a>
   </div>
 </footer>
 
-<script src="<%=htmlWebpackPlugin.files.chunk.paper.entry %>"></script>
+<script src="<%=htmlWebpackPlugin.files.chunks.paper.entry %>"></script>
 
 </body>
 </html>

@@ -5,17 +5,21 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
+//const CopyPlugin = require('copy-webpack-plugin');
 
 // переменная окружения
 const isDev = process.env.NODE_ENV === 'development';
 //const serverUrl = process.env.NODE_ENV === 'development' ? 'http://praktikum.tk' : 'https://praktikum.tk';
 
 module.exports = {
-  entry: {main: './src/index.js'},
+  entry: {
+    main: './src/script/index.js',
+    about: './src/script/about.js',
+    paper: './src/script/paper.js'
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[chunkhash].js'
+    filename: 'scripts/[name].[chunkhash].js'
   },
   module: {
     rules: [
@@ -46,7 +50,7 @@ module.exports = {
     ]
   },
   plugins: [ 
-    new MiniCssExtractPlugin({filename: 'style.[contenthash].css'}),
+    new MiniCssExtractPlugin({filename: 'styles/style.[contenthash].css'}),
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/g,
       cssProcessor: require('cssnano'),
@@ -58,10 +62,21 @@ module.exports = {
       template: './src/index.html', // откуда брать образец для сравнения с текущим видом проекта
       filename: 'index.html' // имя выходного файла, то есть того, что окажется в папке dist после сборки
     }),
+    new HtmlWebpackPlugin({
+      inject: false, // стили НЕ нужно прописывать внутри тегов
+      template: './src/about.html', // откуда брать образец для сравнения с текущим видом проекта
+      filename: 'about.html' // имя выходного файла, то есть того, что окажется в папке dist после сборки
+    }),
+    new HtmlWebpackPlugin({
+      inject: false, // стили НЕ нужно прописывать внутри тегов
+      template: './src/paper.html', // откуда брать образец для сравнения с текущим видом проекта
+      filename: 'paper.html' // имя выходного файла, то есть того, что окажется в папке dist после сборки
+    }),
+    /*
     new CopyPlugin([
       { from:  './src/images', to: `images` },
       //{ from: 'other', to: 'public' },
-    ]),
+    ]),*/
     new WebpackMd5Hash(),
     new webpack.DefinePlugin({'NODE_ENV': JSON.stringify(process.env.NODE_ENV)})
   ]

@@ -11,7 +11,7 @@
   
   <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.chunks.main.css %>">
   
-  <link rel="icon" href="<%=require(./images/favicon/favicon.svg)>">
+  <link rel="icon" href="<%=require('./images/favicon/favicon.png').default%>">
   
 </head>
 <body>
@@ -53,7 +53,7 @@
       </div>
 
       <div class="preloader-empty">
-        <img class="preloader-empty__img" src="<%require('./image/not-found_v1.png')%>" alt="Информация не найдена">
+        <img class="preloader-empty__img" src="<%=require('./images/not-found_v1.png').default%>" alt="Информация не найдена">
         <p class="preloader-empty__caption">Ничего не найдено</p>
         <p class="preloader-empty__info">К сожалению по вашему запросу ничего не найдено</p>
       </div>
@@ -77,10 +77,10 @@
 
     <section class="about-author">
       <picture>
-        <source srcset="<%require('./images/1440.jpg')%>" media="(min-width: 1440px)">
-        <source srcset="<%require('./images/768.jpg')%>" media="(min-width: 768px)">
-        <source srcset="<%require('./images/320.jpg')%>" media="(min-width: 320px)">
-        <img class="about-author__img" src="<%require('./images/w1200.jpg')%>" alt="фотография автора">      
+        <source srcset="<%=require('./images/1440.jpg').default%>" media="(min-width: 1440px)">
+        <source srcset="<%=require('./images/768.jpg').default%>" media="(min-width: 768px)">
+        <source srcset="<%=require('./images/320.jpg').default%>" media="(min-width: 320px)">
+        <img class="about-author__img" src="<%=require('./images/w1200.jpg')%>" alt="фотография автора">      
       </picture>
       <div class="about-author__text">
         <h4 class="about-author__title">Об авторе</h4>
@@ -101,20 +101,20 @@
       <div class="footer__icons">
         <a class="github link" href="https://github.com">
           <picture>
-            <source srcset="<%require('./images/github.png')%>">
-              <img src="<%require('./images/github.png')%>" alt="иконка github">              
+            <source srcset="<%=require('./images/github.png').default%>">
+              <img src="<%=require('./images/github.png').default%>" alt="иконка github">              
           </picture>
         </a>
         <a class="facebook link" href="https://www.facebook.com/">
           <picture>
-            <source srcset="<%require('./images/facebook.png')%>">
-              <img src="<%require('./images/facebook.png')%>" alt="иконка facebook"> 
+            <source srcset="<%=require('./images/facebook.png').default %>">
+              <img src="<%=require('./images/facebook.png').default %>" alt="иконка facebook"> 
           </picture>        
         </a>
       </div>
     </footer>
 
-    <script src="<%=htmlWebpackPlugin.files.chunk.main.entry %>"></script>
+    <script src="<%=htmlWebpackPlugin.files.chunks.main.entry %>"></script>
 
 </body>
 </html>
