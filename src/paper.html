@@ -20,18 +20,139 @@
   <meta name="theme-color" content="#ffffff">
 </head>
 <body>
-    <header class="main-header">
-        <section class="common-header common-header_main">
-          <h1 class="common-header__title common-header__title_main">NewsAnalyzer</h1>
-          <nav class="common-header__links common-header__link_main">
-            <div class="common-header-links-wrapper common-header-links-wrapper_main-one">
-              <a class="link link_main" href="./index.html">Главная</a>
-            </div>
-            <div class="common-header-links-wrapper">
-              <a class="link-change-main" href="./about.html">О проекте</a>
-            </div>
-          </nav>
-        </section>        
-    </header>
+  <header class="common-header">        
+    <h1 class="common-header__title">NewsAnalyzer</h1>
+    <nav class="common-header__links">
+      <div class="common-header-links-wrapper">
+        <a class="link-change" href="./index.html">Главная</a>
+      </div>
+      <div class="common-header-links-wrapper common-header-links-wrapper_paper-three">
+        <a class="link-change" href="./about.html">О проекте</a>
+      </div>
+    </nav>                
+</header>
+
+<section class="paper-info">
+  <div class="paper-info__wrapper-title">
+    <span>Главная&nbsp;/</span>
+    <span>Аналитика</span>
+  </div>
+  <h1 class="paper-info__title">Заголовок таблицы</h1>
+  <p class="paper-info__caption">Новостей за неделю: <b class="news-week-count"></b></p>
+  <p class="paper-info__caption">Упоминаний в заголовках: <b class="title-week-count"></b></p>
+</section>
+
+<section class="table">
+  <h2 class="table__title">Аналитика по дням</h2>
+  <div class="table__wrapper-text">
+    <p class="table-caption"></p>
+    <p class="table-caption">Кол-во упоминаний</p>
+  </div>
+
+  <div class="table__wrapper-num">
+    <p class="line-num">0</p>
+    <p class="line-num">25</p>
+    <p class="line-num">50</p>
+    <p class="line-num">75</p>
+    <p class="line-num">100</p>
+  </div>
+
+  <div class="table-graph">
+
+    <div class="data-graph">
+      <p class="table-graph__text"></p>
+      <div class="table-graph__line-wrapper">
+        <div class="text-line-wrapper">
+          <p class="text-line-wrapper__line-info-text"></p>
+        </div>
+      </div>
+    </div>
+    <div class="data-graph">
+      <p class="table-graph__text"></p>
+      <div class="table-graph__line-wrapper">
+        <div class="text-line-wrapper">
+          <p class="text-line-wrapper__line-info-text"></p>
+        </div>
+      </div>
+    </div>
+    <div class="data-graph">
+      <p class="table-graph__text"></p>
+      <div class="table-graph__line-wrapper">
+        <div class="text-line-wrapper">
+          <p class="text-line-wrapper__line-info-text"></p>
+        </div>
+      </div>
+    </div>
+    <div class="data-graph">
+      <p class="table-graph__text"></p>
+      <div class="table-graph__line-wrapper">
+        <div class="text-line-wrapper">
+          <p class="text-line-wrapper__line-info-text"></p>
+        </div>
+      </div>
+    </div>
+    <div class="data-graph">
+      <p class="table-graph__text"></p>
+      <div class="table-graph__line-wrapper">
+        <div class="text-line-wrapper">
+          <p class="text-line-wrapper__line-info-text"></p>
+        </div>
+      </div>
+    </div>
+    <div class="data-graph">
+      <p class="table-graph__text"></p>
+      <div class="table-graph__line-wrapper">
+        <div class="text-line-wrapper">
+          <p class="text-line-wrapper__line-info-text"></p>
+        </div>
+      </div>
+    </div>
+    <div class="data-graph">
+      <p class="table-graph__text"></p>
+      <div class="table-graph__line-wrapper">
+        <div class="text-line-wrapper">
+          <p class="text-line-wrapper__line-info-text"></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="table__wrapper-num">
+    <p class="line-num">0</p>
+    <p class="line-num">25</p>
+    <p class="line-num">50</p>
+    <p class="line-num">75</p>
+    <p class="line-num">100</p>
+  </div>
+
+</section>
+
+<footer class="footer">
+  <div class="footer__copyright">&#169; 2020 Supersite</div>
+  <div class="footer__links">
+    <a class="url-link link" href="./index.html">Главная</a>
+    <a class="url-link link" href="./about.html">О проекте</a>
+    <a class="url-link link" href="https://praktikum.yandex.ru">Яндекс.Практикум</a>
+  </div>
+  <div class="footer__icons">
+    <a class="github link" href="https://github.com">
+      <picture>
+        <source srcset="<%require('./images/github.png')%>">
+          <img src="<%require('./images/github.png')%>" alt="иконка github">              
+      </picture>
+    </a>
+    <a class="facebook link" href="https://www.facebook.com/">
+      <picture>
+        <source srcset="<%require('./images/facebook.png')%>">
+          <img src="<%require('./images/facebook.png')%>" alt="иконка facebook"> 
+      </picture>        
+    </a>
+  </div>
+</footer>
+
+<script src="<%=htmlWebpackPlugin.files.chunk.paper.entry %>"></script>
+
+
 </body>
 </html>
