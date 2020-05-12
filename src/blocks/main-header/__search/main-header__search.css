@@ -1,0 +1,25 @@
+@import url('../../search-title/search-title.css');
+@import url('../../search-description/search-description.css');
+@import url('../../search-wrapper/search-wrapper.css');
+
+@media screen and (min-width: 320px) {
+    .main-header__search {
+        width: 288px;
+        margin: 30px auto 0 auto;
+    }
+ }
+ 
+ @media screen and (min-width: 768px) {
+    .main-header__search {
+        width: 452px;
+        margin: 40px auto 0 auto;
+    }
+
+}
+
+ @media screen and (min-width: 1440px) {
+    .main-header__search {
+        width: 608px;
+        margin: 80px auto 0 auto;
+    }
+ }

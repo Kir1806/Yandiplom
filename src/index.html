@@ -11,35 +11,35 @@
   
   <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.chunks.main.css %>">
   
-  <link rel="icon" href="<%=require('./images/favicon/favicon.png').default%>">
+  <link rel="icon" href="<%=require('./images/favicon/favicon.png').default%>" type="image/png">
   
 </head>
 <body>
     <header class="main-header">
-        <section class="common-header common-header_main">
-          <h1 class="common-header__title common-header__title_main">NewsAnalyzer</h1>
-          <nav class="common-header__links common-header__link_main">
-            <div class="common-header-links-wrapper common-header-links-wrapper_main-one">
-              <a class="link link_main" href="./index.html">Главная</a>
-            </div>
-            <div class="common-header-links-wrapper">
-              <a class="link-change-main" href="./about.html">О проекте</a>
-            </div>
-          </nav>
-        </section>        
+      <section class="common-header common-header_main">
+        <h1 class="common-header__title common-header__title_main">NewsAnalyzer</h1>
+        <nav class="common-header__links common-header__link_main">
+          <div class="common-header-links-wrapper common-header-links-wrapper_main-one">
+            <a class="link link_main" href="./index.html">Главная</a>
+          </div>
+          <div class="common-header-links-wrapper">
+            <a class="link-change-main" href="./about.html">О проекте</a>
+          </div>
+        </nav>
+      </section>   
+
+      <section class="main-header__search">
+        <h2 class="search-title"> Что в мире творится?</h2>
+        <p class="search-description">Введите в поиске любую тему и узнайте, насколько популярной она была в новостях за прошедшую неделю</p>
+        <div class="search-wrapper">
+          <input type="text" class="search-wrapper__input" placeholder="Введите тему новости" required>
+          <button class="button button-search">Искать</button>
+        </div>
+      </section>
     </header>
 
-    <section class="main-search">
-      <h2 class="main-search__title"> Что в мире творится?</h2>
-      <p class="main-search__description">Введите в поиске любую тему и узнайте, насколько популярной она была в новостях за прошедшую неделю</p>
-      <div class="main-search-wrapper">
-        <input type="text" class="main-search-wrapper__input" placeholder="Введите тему новости" required>
-        <button class="button button-search">Искать</button>
-      </div>
-    </section>
-
     <section class="main-content">
-      <div class="main-conent__header">
+      <div class="main-content__header">
         <h3 class="main-header-caption">Результаты поиска</h3>
         <a class="main-header-wrapper link" href="./paper.html">
           <p class="main-header-wrapper__text">Посмотреть аналитику</p>
@@ -65,11 +65,91 @@
       </div>
 
       <div class="main-content__result">
-        <div class="main-content-card">
-          
+
+        <div class="main-content-card">        
+          <img class="main-content-card__img" src="<%=require('./images/image_08.png').default%>" alt="цветы">
+          <div class="main-content-card__text">
+            <p class="card-text-data">8 мая,2020</p>
+            <div class="card-text-wrapper">
+              <h4 class="card-text-wrapper__title">Национальное достояние – парки</h4>
+              <p class="card-text-wrapper__content">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала 
+              складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к 
+              природе.</p>
+            </div>
+            <p class="card-text-print">Лента.ру</p>
+          </div>
         </div>
 
+        <div class="main-content-card">        
+          <img class="main-content-card__img" src="<%=require('./images/image_05.png').default%>" alt="цветы">
+          <div class="main-content-card__text">
+            <p class="card-text-data">8 мая,2020</p>
+            <div class="card-text-wrapper">
+              <h4 class="card-text-wrapper__title">Лесные огоньки: история одной фотографии</h4>
+              <p class="card-text-wrapper__content">Фотограф отвлеклась от освещения суровой политической реальности Мексики,
+                 чтобы запечатлеть ускользающую красоту одного 
+                из местных чудес природы..</p>
+            </div>
+            <p class="card-text-print">Лента.ру</p>
+          </div>
+        </div>
 
+        <div class="main-content-card">        
+          <img class="main-content-card__img" src="<%=require('./images/image_08.png').default%>" alt="цветы">
+          <div class="main-content-card__text">
+            <p class="card-text-data">8 мая,2020</p>
+            <div class="card-text-wrapper">
+              <h4 class="card-text-wrapper__title">Национальное достояние – парки</h4>
+              <p class="card-text-wrapper__content">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала 
+              складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к 
+              природе.</p>
+            </div>
+            <p class="card-text-print">Лента.ру</p>
+          </div>
+        </div>
+
+        <div class="main-content-card">        
+          <img class="main-content-card__img" src="<%=require('./images/image_07.png').default%>" alt="цветы">
+          <div class="main-content-card__text">
+            <p class="card-text-data">8 мая,2020</p>
+            <div class="card-text-wrapper">
+              <h4 class="card-text-wrapper__title">Национальное достояние – парки</h4>
+              <p class="card-text-wrapper__content">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала 
+              складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к 
+              природе.</p>
+            </div>
+            <p class="card-text-print">Лента.ру</p>
+          </div>
+        </div>
+
+        <div class="main-content-card">        
+          <img class="main-content-card__img" src="<%=require('./images/image_04.png').default%>" alt="цветы">
+          <div class="main-content-card__text">
+            <p class="card-text-data">8 мая,2020</p>
+            <div class="card-text-wrapper">
+              <h4 class="card-text-wrapper__title">Национальное достояние – парки</h4>
+              <p class="card-text-wrapper__content">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала 
+              складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к 
+              природе.</p>
+            </div>
+            <p class="card-text-print">Лента.ру</p>
+          </div>
+        </div>
+
+        <div class="main-content-card">        
+          <img class="main-content-card__img" src="<%=require('./images/image_01.png').default%>" alt="цветы">
+          <div class="main-content-card__text">
+            <p class="card-text-data">8 мая,2020</p>
+            <div class="card-text-wrapper">
+              <h4 class="card-text-wrapper__title">Национальное достояние – парки</h4>
+              <p class="card-text-wrapper__content">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала 
+              складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к 
+              природе.</p>
+            </div>
+            <p class="card-text-print">Лента.ру</p>
+          </div>
+        </div>
+        
       </div>
 
       <div class="main-content__more">
@@ -83,10 +163,10 @@
 
     <section class="about-author">
       <picture>
-        <source srcset="<%=require('./images/1440.jpg').default%>" media="(min-width: 1440px)">
-        <source srcset="<%=require('./images/768.jpg').default%>" media="(min-width: 768px)">
-        <source srcset="<%=require('./images/320.jpg').default%>" media="(min-width: 320px)">
-        <img class="about-author__img" src="<%=require('./images/w1200.jpg')%>" alt="фотография автора">      
+        <source srcset="<%=require('./images/a22.jpg').default%>" media="(min-width: 1440px)">
+        <source srcset="<%=require('./images/a23.jpg').default%>" media="(min-width: 768px)">
+        <source srcset="<%=require('./images/a24.jpg').default%>" media="(min-width: 320px)">
+        <img class="about-author__img" src="<%=require('./images/a22.jpg').default%>" alt="фотография автора">      
       </picture>
       <div class="about-author__text">
         <h4 class="about-author__title">Об авторе</h4>

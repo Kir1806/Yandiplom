@@ -1,0 +1,32 @@
+@import url('../../card-text-data/card-text-data.css');
+@import url('../../card-text-wrapper/card-text-wrapper.css');
+@import url('../../card-text-print/card-text-print.css');
+
+
+.main-content-card__text {
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (min-width: 320px) {
+    .main-content-card__text {
+        height: 250px;
+        padding: 0px 16px 20px 16px;
+    }
+}
+
+
+
+@media screen and (min-width: 768px) {
+    .main-content-card__text {
+        padding: 0px 16px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .main-content-card__text {
+        height: 300px;
+        padding: 0px 24px;
+    }
+}
+

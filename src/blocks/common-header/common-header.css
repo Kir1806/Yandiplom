@@ -1,0 +1,40 @@
+@import url('./__title/common-header__title.css');
+@import url('./__links/common-header__links.css');
+
+.common-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    background: rgba(196, 196, 196, 0.01);
+    box-shadow: inset 0px -1px 0px #D1D2D6;
+    border: 1px solid red;
+}
+
+.common-header_main {
+    box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.2);
+}
+
+@media screen and (min-width: 320px) {
+    .common-header {
+        width: 100%;
+        height: 56px;
+    }
+ }
+
+ @media screen and (min-width: 768px) {
+    .common-header {
+        width: 100%;
+        height: 66px;
+    }
+
+}
+
+ @media screen and (min-width: 1440px) {
+    .common-header {
+        width: 1440px;
+        height: 80px;
+    }
+
+ }
+ 

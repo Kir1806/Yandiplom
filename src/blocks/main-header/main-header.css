@@ -1,0 +1,54 @@
+@import url('../common-header/common-header.css');
+@import url('./__search/main-header__search.css');
+
+.main-header {
+    margin: 0 auto;
+    border: 1px solid red;
+}
+
+ @media screen and (min-width: 320px) {
+    .main-header {
+        width: 100%;
+        height: 536px;
+        
+        background: url('../../images/320fon.png') center center no-repeat;
+        background-size: cover;
+    }
+ } 
+
+ @media screen and (min-width: 480px) {
+    .main-header {
+        width: 100%;
+        height: 536px;
+        background-size: cover;
+        background: url('../../images/768fon.png') 5 no-repeat;
+    }
+ }
+
+
+ @media screen and (min-width: 768px) {
+    .main-header {
+        width: 100%;
+        height: 400px;
+        background-size: cover;
+        background: url('../../images/768fon.png') 50% no-repeat;
+    }
+
+}
+@media screen and (min-width: 800px) {
+    .main-header {
+        width: 100%;
+        height: 576px;        
+        background: url('../../images/indexfon.png') center center no-repeat;
+        background-size: cover;
+    }
+ }
+
+ @media screen and (min-width: 1440px) {
+    .main-header {
+        width: 1440px;
+        height: 576px;        
+        background: url('../../images/indexfon.png') center center no-repeat;
+        background-size: 1440px 576px;
+    }
+ }
