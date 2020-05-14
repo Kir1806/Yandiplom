@@ -1,9 +1,0 @@
-.button-more {
-    width: 288px;
-    border-radius: 80px;
-    transition: .7s;
-    background-color: #F5F6F7;
-}
-.button-more:hover {
-    background-color: #fff;
-}
