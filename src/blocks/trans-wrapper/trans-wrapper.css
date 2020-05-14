@@ -1,0 +1,25 @@
+@import url('./__next/trans-wrapper__next.css');
+@import url('./__prev/trans-wrapper__prev.css');
+
+.trans-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+}
+
+@media screen and (min-width: 320px) {
+    .trans-wrapper {
+        display: none;
+    }
+}
+@media screen and (min-width: 768px) {
+    .trans-wrapper {
+        display: none;
+    }
+}
+@media screen and (min-width: 1440px) {
+    .trans-wrapper {
+        display: flex;
+    }
+}

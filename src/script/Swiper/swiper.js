@@ -7,12 +7,13 @@ let Slider = new Swiper ('.swiper-container', {
   spaceBetween: 16,
   slidesPerView: 'auto',
   pagination: {
-    el: '.swiper-pagination',
+    el: '.swiper-pagination',  
     clickable: true
   },
   navigation: {
-    prevEl: '.swiper-button-next',
-    nextEl: '.swiper-button-prev'
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev'
+
   },
   on: {
     slideChange: () => {

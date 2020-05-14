@@ -44,18 +44,18 @@
     <section class="tech">
       <h2 class="tech__title">Используемые технологии</h2>
       <div class="tech__img-wrapper">
-        <img class="img-use-tech" src="<%=require('./images/HTML.png').default%>" alt="логотип HTML">
-        <img class="img-use-tech" src="<%=require('./images/CSS.png').default%>" alt="логотип CSS">
-        <img class="img-use-tech" src="<%=require('./images/JS.png').default%>" alt="логотип Java Script">
-        <img class="img-use-tech" src="<%=require('./images/Webpack.png').default%>" alt="логотип Webpack">
+        <img class="img-use-tech" src="<%=require('./images/tech.png').default%>" alt="логотип HTML">
+        <img class="img-use-tech" src="<%=require('./images/tech2.png').default%>" alt="логотип CSS">
+        <img class="img-use-tech" src="<%=require('./images/tech3.png').default%>" alt="логотип Java Script">
+        <img class="img-use-tech" src="<%=require('./images/tech4.png').default%>" alt="логотип Webpack">
       </div>
     </section>
 
     <section class="about-author">
       <picture>
-        <source srcset="<%=require('./images/1440.jpg').default%>" media="(min-width: 1440px)">
-        <source srcset="<%=require('./images/768.jpg').default%>" media="(min-width: 768px)">
-        <source srcset="<%=require('./images/320.jpg').default%>" media="(min-width: 320px)">
+        <source srcset="<%=require('./images/a22.jpg').default%>" media="(min-width: 1440px)">
+        <source srcset="<%=require('./images/a23.jpg').default%>" media="(min-width: 768px)">
+        <source srcset="<%=require('./images/a24.jpg').default%>" media="(min-width: 320px)">
         <img class="about-author__img" src="<%=require('./images/1440.jpg').default%>" alt="фотография автора">      
       </picture>
       <div class="about-author__text">
@@ -68,6 +68,7 @@
     </section>
 
     <section class="slider">
+
       <div class="slider__header">
         <h3 class="slider-header-caption">История коммитов из Github</h3>
         <a href="https://github.com/kir1806" class="slider-link-wrapper link">
@@ -78,11 +79,12 @@
 
       <div class="swiper-container">
         <div class="swiper-wrapper">
-          <div class="slide">
+
+          <div class="swiper-slide">
             <div class="slide-block">
               <p class="slide-block__data">07 мая 2020</p>
               <div class="slide-block__user">
-                <img class="user-photo" src="<&=require('./images/image-04.png').default%>" alt="фото пользователя">
+                <img class="user-photo" src="<%=require('./images/image-04.png').default%>" alt="фото пользователя">
                 <div class="user-info">
                   <p class="user-info__name">Мария Фёдорова</p>
                   <p class="user-info__mail">mariyafed@yandex.ru</p>
@@ -97,11 +99,11 @@
             </div>
           </div>
 
-          <div class="slide">
+          <div class="swiper-slide">
             <div class="slide-block">
               <p class="slide-block__data">07 мая 2020</p>
               <div class="slide-block__user">
-                <img class="user-photo" src="<&=require('./images/image-04.png').default%>" alt="фото пользователя">
+                <img class="user-photo" src="<%=require('./images/image-04.png').default%>" alt="фото пользователя">
                 <div class="user-info">
                   <p class="user-info__name">Мария Фёдорова</p>
                   <p class="user-info__mail">mariyafed@yandex.ru</p>
@@ -116,11 +118,11 @@
             </div>
           </div>
 
-          <div class="slide">
+          <div class="swiper-slide">
             <div class="slide-block">
               <p class="slide-block__data">07 мая 2020</p>
               <div class="slide-block__user">
-                <img class="user-photo" src="<&=require('./images/image-01.png').default%>" alt="фото пользователя">
+                <img class="user-photo" src="<%=require('./images/image-01.png').default%>" alt="фото пользователя">
                 <div class="user-info">
                   <p class="user-info__name">Антон Долинин</p>
                   <p class="user-info__mail">antoha@yandex.ru</p>
@@ -135,11 +137,11 @@
             </div>
           </div>
 
-          <div class="slide">
+          <div class="swiper-slide">
             <div class="slide-block">
               <p class="slide-block__data">07 мая 2020</p>
               <div class="slide-block__user">
-                <img class="user-photo" src="<&=require('./images/image-03.png').default%>" alt="фото пользователя">
+                <img class="user-photo" src="<%=require('./images/image-033.png').default%>" alt="фото пользователя">
                 <div class="user-info">
                   <p class="user-info__name">Мария Фёдорова</p>
                   <p class="user-info__mail">mariyafed@yandex.ru</p>
@@ -153,13 +155,34 @@
               <div class="trans-wrapper__prev"></div>
             </div>
           </div>
-        </div>
+
+          <div class="swiper-slide">
+            <div class="slide-block">
+              <p class="slide-block__data">07 мая 2020</p>
+              <div class="slide-block__user">
+                <img class="user-photo" src="<%=require('./images/image-033.png').default%>" alt="фото пользователя">
+                <div class="user-info">
+                  <p class="user-info__name">Мария Фёдорова</p>
+                  <p class="user-info__mail">mariyafed@yandex.ru</p>
+                </div>
+              </div>
+              <p class="slide-block__text">You can install this plugin directly from NetBeans Plugin Portal: in NetBeans, open   Tools >
+                Plugins > Available plugins   and find and install Emmet plugin.</p>
+            </div>
+            <div class="trans-wrapper">
+              <div class="trans-wrapper__next"></div>
+              <div class="trans-wrapper__prev"></div>
+            </div>
+          </div>        
+        
+        </div>        
+        
         <div class="swiper-pagination"></div>
-        <div class="swiper-button-prev arrov-prev">
-          <img src="<%=require('./images/left_arr.png').default%>" alt="назад">
+        <div class="swiper-button-prev arrow-prev">
+          <img src="<%=require('./images/slider-left.png').default%>" alt="назад">
         </div>
-        <div class="swiper-button-prev arrov-next">
-          <img src="<%=require('./images/right_arr.png').default%>" alt="вперед">
+        <div class="swiper-button-next arrow-next">
+          <img src="<%=require('./images/slider-right.png').default%>" alt="вперед">
         </div>
       </div>
       <div class="slider__button">

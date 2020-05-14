@@ -1,0 +1,32 @@
+@import url('./__title/tech__title.css');
+@import url('./__img-wrapper/tech__img-wrapper.css');
+
+.tech {
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    background-color: #F5F6F7;
+}
+
+@media screen and (min-width: 320px) {
+    .tech {
+        width: 100%;
+        padding: 32px 16px;
+        flex-direction: column;
+    }
+}
+@media screen and (min-width: 768px) {
+    .tech {
+        width: 100%;
+        padding: 40px 56px;
+        flex-direction: column;
+    }
+}
+@media screen and (min-width: 1440px) {
+    .tech {
+        width: 1440px;
+        padding: 80px 216px 88px 104px;
+        flex-direction: row;
+    }
+    
+}

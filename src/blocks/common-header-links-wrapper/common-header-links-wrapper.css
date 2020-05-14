@@ -1,7 +1,7 @@
 @import url('../link-change/link-change.css');
 @import url('../link-change-main/link-change-main.css');
 
-.common-header-links-wrapper a {
+.common-header-links-wrapper a, .common-header-links-wrapper_paper-three a {
     font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: 500;
