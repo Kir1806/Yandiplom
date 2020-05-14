@@ -31,7 +31,7 @@ module.exports = {
       {
         
         test: /\.css$/i, // применять это правило только к CSS-файлам
-        use: [(isDev ? 'style-loader' : { loader: MiniCssExtractPlugin.loader,
+        use: [(isDev ? 'style-loader' : {  loader: MiniCssExtractPlugin.loader,
         options: {
           publicPath: '../'
         }
