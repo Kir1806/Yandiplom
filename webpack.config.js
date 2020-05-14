@@ -31,7 +31,11 @@ module.exports = {
       {
         
         test: /\.css$/i, // применять это правило только к CSS-файлам
-        use: [(isDev ? 'style-loader' : MiniCssExtractPlugin.loader), 'css-loader', 'postcss-loader'] 
+        use: [(isDev ? 'style-loader' : { loader: MiniCssExtractPlugin.loader,
+        options: {
+          publicPath: '../'
+        }
+        }), 'css-loader', 'postcss-loader'] 
       },
       {
         test: /\.(png|jpe?g|gif|ico|svg)$/, // для изображений
