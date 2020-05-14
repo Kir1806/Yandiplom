@@ -15,22 +15,6 @@ let Slider = new Swiper ('.swiper-container', {
     prevEl: '.swiper-button-prev'
 
   },
-  on: {
-    slideChange: () => {
-      nextElementOverflow.setAttribute('style', 'visibility: none;');
-      prevElementOverflow.setAttribute('style', 'visibility: none;');
-      nextElementOverflow = Slider.slides[Slider.activeIndex + 2].querySelector('.trans-wrapper__next');
-      prevElementOverflow = Slider.slides[Slider.activeIndex - 2].querySelector('.trans-wrapper__prev');
-      nextElementOverflow.setAttribute('style', 'visibility: visible;');
-      prevElementOverflow.setAttribute('style', 'visibility: visible;');
-    }
-  }
 });
-
-let nextElementOverflow = Slider.slides[Slider.activeIndex + 2].querySelector('.trans-wrapper__next');
-let prevElementOverflow = Slider.slides[Slider.activeIndex - 2].querySelector('.trans-wrapper__prev');
-
-nextElementOverflow.setAttribute('style', 'visibility: visible;');
-prevElementOverflow.setAttribute('style', 'visibility: visible;');
 
 export {Slider};
