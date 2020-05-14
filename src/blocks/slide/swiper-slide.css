@@ -1,5 +1,5 @@
 @import url('../slide-block/slide-block.css');
-@import url('../trans-wrapper/trans-wrapper.css');
+
 
 .swiper-slide {
     display: flex;

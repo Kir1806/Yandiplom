@@ -7,7 +7,7 @@
     position: relative;
     margin: 0 auto;
     background-color:  #F5F6F7;
-    border: 1px solid red;
+    /*border: 1px solid red;*/
 }
 
 
@@ -20,7 +20,5 @@
 }
 
 @media screen and (min-width: 1440px) {
-    .preloader-load {
-        /*width: 1440px;        */
-    }
+  
  }
