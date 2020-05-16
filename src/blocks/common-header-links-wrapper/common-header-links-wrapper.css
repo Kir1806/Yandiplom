@@ -1,0 +1,53 @@
+@import url('../link-change/link-change.css');
+@import url('../link-change-main/link-change-main.css');
+
+.common-header-links-wrapper a, .common-header-links-wrapper_paper-three a {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    text-decoration: none;
+}
+
+.common-header-links-wrapper_paper-three a {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    text-decoration: none; 
+}
+
+@media screen and (min-width: 320px) {
+     .common-header-links-wrapper {
+         font-size: 16px;
+         margin-top: 16px; 
+    }
+    .common-header-links-wrapper_paper-three {
+         font-size: 16px;
+         margin-top: 16px;       
+    }
+ }
+
+@media screen and (min-width: 768px) {
+    .common-header-links-wrapper {
+        font-size: 18px;
+        margin-top: 22px; 
+   }
+   .common-header-links-wrapper_paper-three {
+        font-size: 18px;
+        margin-top: 22px;       
+   }
+}
+
+
+
+@media screen and (min-width: 1440px) {
+     .common-header-links-wrapper {
+          font-size: 18px;
+          margin-top: 30px; 
+     }
+     .common-header-links-wrapper_paper-three {
+          font-size: 18px;
+          margin-top: 30px;       
+     }
+  }

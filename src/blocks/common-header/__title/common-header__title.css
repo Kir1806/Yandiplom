@@ -1,0 +1,32 @@
+.common-header__title {
+    font-family: 'Roboto Slab', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 24px;
+    color: #1A1B22;
+}
+
+.common-header__title_main {
+    color: #fff;
+}
+
+@media screen and (min-width: 320px) {
+    .common-header__title {
+        font-size: 16px;
+        margin-left: 16px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .common-header__title {
+        font-size: 20px;
+        margin-left: 40px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .common-header__title {
+        font-size: 20px;
+        margin-left: 104px;
+    }
+}

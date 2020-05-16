@@ -1,0 +1,12 @@
+.preloader-empty__info {
+    width: 100%;
+    padding: 0 10px;
+    text-align: center;
+    width: 356px;
+    color: #B6BCBF;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+}

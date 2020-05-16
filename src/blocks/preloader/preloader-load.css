@@ -1,0 +1,24 @@
+@import url('./__circle-preloader/preloader-load__circle-preloader.css');
+@import url('./__caption/preloader-load__caption.css');
+
+.preloader-load {    
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin: 0 auto;
+    background-color:  #F5F6F7;
+    /*border: 1px solid red;*/
+}
+
+
+ 
+ @media screen and (min-width: 768px) {
+    .preloader-load {
+        width: 100%;        
+    }
+
+}
+
+@media screen and (min-width: 1440px) {
+  
+ }

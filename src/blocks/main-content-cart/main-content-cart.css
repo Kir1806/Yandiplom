@@ -1,0 +1,38 @@
+@import url('./__img/main-content-card__img.css');
+@import url('./__text/main-content-card__text.css');
+
+.main-content-card {
+    cursor: pointer;
+    border-radius: 3%;
+    margin-left: auto;
+    margin-right: auto; 
+    background-color: #FFF;
+
+}
+
+.main-content-card:nth-last-child(n+4) {
+    margin-bottom: 16px;
+}
+
+@media screen and (min-width: 320px) {
+    .main-content-card {
+        width: 288px;
+        height: 446px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .main-content-card {
+        width: 224px;
+        height: 420px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .main-content-card {
+        width: 400px;
+        height: 576px;    
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
