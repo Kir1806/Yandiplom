@@ -3,7 +3,7 @@ import { NEWS_API_KEY, NEWS_API_URL, NEWS_API_PAGES, NEWS_API_COUNTRY } from '..
 export default class NewsAPI {
     /*constructor() {
     }*/
-    sendRequestNews () {
+    getNews () {
         return fetch(`${NEWS_API_URL}q=bitcoin&laungage=${NEWS_API_COUNTRY}&apiKey=${NEWS_API_KEY}`)
         .then(result => {
             if(result.ok) {
@@ -11,7 +11,7 @@ export default class NewsAPI {
             }
         })
         .then(data => {
-            return data;
+            return data.articles;
         })       
     }
 }
