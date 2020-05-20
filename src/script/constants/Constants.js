@@ -10,3 +10,5 @@ const NOW = new Date();
 export const DAY_NOW = new Date(NOW.getTime() + NOW.getTimezoneOffset() * 60000);
 export const SEARCH_INTERVAL = new Date(DAY_NOW.getFullYear(), DAY_NOW.getMonth(), DAY_NOW.getDate());
 SEARCH_INTERVAL.setDate(SEARCH_INTERVAL.getDate() - 6);
+
+export const MONTHS_FOR_CARD = ["Января", "Февраля", "Марта", "Апреля", "Мая", "Июня", "Июля", "Августа", "Сентября", "Октября", "Ноября", "Декабря"];

@@ -6,25 +6,23 @@ export default class NewsCard {
     constructor() {
     }
 
-    createCard(element){
+    getTemplateCard(content, date){
         //const container = document.querySelector('.main-content__result');        
         const contentCard = document.createElement("div");
         contentCard.classList.add('main-content-card');
         contentCard.insertAdjacentHTML('beforeend',`
-        <a class="card-link" href="">
-        <img class="main-content-card__img" src='./images/not-found_v1.png' alt="цветы">
+        <a class="card-link" href="${content.url}">
+        <img class="main-content-card__img" src='' alt="">
           <div class="main-content-card__text">
-            <p class="card-text-data">8 мая,2020</p>
+            <p class="card-text-data">${content.url}</p>
             <div class="card-text-wrapper">
-              <h4 class="card-text-wrapper__title">Национальное достояние – парки</h4>
-              <p class="card-text-wrapper__content">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала 
-              складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к 
-              природе.</p>
+              <h4 class="card-text-wrapper__title">${content.title}</h4>
+              <p class="card-text-wrapper__content">${content.description}</p>
             </div>
-            <p class="card-text-print">Лента.ру</p>
+            <p class="card-text-print">${content.source.name}</p>
           </div>
           </a>`);
-          return contentCard;          
+          return contentCard;      //mainContentResult.appendChild(contentCard);    
     }
 
     showElement(elem, style) {
@@ -88,7 +86,93 @@ export default class NewsCard {
       return this.noImage;
     }
 
-    //addCard()
+    _checkImage(url) {
+      const promise = new Promise((resolve, reject) => {
+        const img = document.createElement('img');
+        img.classList.add('main-content-card__img');
+        img.setAttribute('alt', 'новость');
+        img.setAttribute('src', url);
+        img.onerror = reject;
+        img.onload = function() {
+          resolve(img);
+        };
+      });
+      return promise;
+    }
+
+    _createMarkup() {
+      this.cardLink = document.createElement('a');
+      this.mainContentCard = document.createElement('div');
+      this.mainContentCardText = document.createElement('div');
+      this.cardWrapper = document.createElement('div');
+      this.cardTextData = document.createElement('p');
+      this.cardTextWrapper = document.createElement('div');
+      this.cardTextWrapperTitle = document.createElement('h4');
+      this.cardTextWrapperContent = document.createElement('p');
+      this.cardTextPrint = document.createElement('p');
+
+      this.cardLink.classList.add('card-link');
+      this.mainContentCard.classList.add('main-content-card');
+      this.mainContentCardText.classList.add('main-content-card__text');
+      this.cardWrapper.classList.add('card-wrapper');
+      this.cardTextData.classList.add('card-text-data');
+      this.cardTextWrapper.classList.add('card-text-wrapper');
+      this.cardTextWrapperTitle.classList.add('card-text-wrapper__title');
+      this.cardTextWrapperContent.classList.add('card-text-wrapper__content');
+      this.cardTextPrint.classList.add('card-text-print');
+
+      this.cardLink.appendChild(this.mainContentCard);
+      this.mainContentCard.appendChild(this.mainContentCardText);
+      this.mainContentCardText.appendChild(this.cardWrapper);
+      this.cardWrapper.appendChild(this.cardTextData);
+      this.cardWrapper.appendChild(this.cardTextWrapper);
+      this.mainContentCardText.appendChild(this.cardTextPrint);
+      this.cardTextWrapper.appendChild(this.cardTextWrapperTitle);
+      this.cardTextWrapper.appendChild(this.cardTextWrapperContent);
+    }
+
+    _createCardBlock(content, date) {
+      this._createMarkup();
+      this.cardLink.setAttribute('href', content.url);
+      this.cardTextData.textContent = date.dateForCards(content.publishedAt);
+      this.cardTextWrapperTitle.textContent = content.title;
+      this.cardTextWrapperContent.textContent = content.description;
+      this.cardTextPrint.textContent = content.source.name;
+      mainContentResult.appendChild(this.cardLink);
+    }
+
+
+
+    createCard(content, date){
+      this._checkImage(content.urlToImage)
+      .then((img) => {
+        this._createCardBlock(content, date);
+        this.mainContentCard.insertBefore(img, this.mainContentCard.firstChild);
+      })
+      .catch((error) => {
+        this._createCardBlock(content, date);
+        this.mainContentCard.insertBefore(this._noImage(), this.mainContentCard.firstChild);
+      });
+
+    }
+
+    addCard(dataStorage, date) {
+      this.posInStart = 0;
+      const lastQuery = JSON.parse(localStorage.getItem('query'));
+      if(lastQuery) {
+        searchInput.value = lastQuery;
+      }
+      if(dataStorage.length > 3 ) {
+        for(let i =0; i < 3; i++) {
+          this.createCard(dataStorage[i], date);
+        }
+      } else {
+        dataStorage.forEach((element) => {
+          this.createCard(element, date);
+        });
+      }
+
+    }
 
 
 }
