@@ -1,4 +1,4 @@
-import {DAY_NOW, SEARCH_INTERVAL, MONTHS_FOR_CARD} from '../constants/Constants';
+import {DAY_NOW, SEARCH_INTERVAL, MONTHS_FOR_CARD, MONTHS_TITLE, DAYS_TITLE} from '../constants/Constants';
 
 export default class Dates {
 
@@ -18,10 +18,26 @@ export default class Dates {
         return cardDate;
     }
 
-    titleTableData(date){
+    titleTableData(date) {
         const newDate = new Date(date);
         const interminDate = new Date(newDate.getTime() + newDate.getTimezoneOffset() * 60000); 
-        const titleMonth = 
+        const titleMonth = MONTHS_TITLE[interminDate.getMonth()];
+        return titleMonth;
     }
 
+    convertDate(date) {
+        return date.getDate() + ', ' + DAYS_TITLE[date.getDay()];
+    }
+
+    getDayweek() {
+        const search = SEARCH_INTERVAL;
+        const res = {};
+        for( let i = 0; i < 7; i++) {
+            search.setDate(search.getDate() + i);
+            let day = this.convertDate(search);
+            search.setDate(search.getDate() - i);
+            res[`day${i}`] = day;
+        }
+        return res;
+    }
 }

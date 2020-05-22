@@ -7,3 +7,9 @@ import Title from '../components/Title';
 
 const dates = () => new Dates;
 const dataStorage = new DataStorage;
+
+const title = new Title(dataStorage.loadFromStorage());
+const draw = new Draw(dates(), dataStorage.loadFromStorage());
+
+title.loadTitle();
+draw.drawTableGraph();
