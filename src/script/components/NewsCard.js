@@ -1,11 +1,11 @@
 import {bigBlueSearchButton, mainContentResult, mainContent,
    searchInput, preloaderLoad, preloaderEmpty, 
-   requestError, linkToAnalytics, moreCardsButton} from '../components/DOMelements'
+   requestError, linkToAnalytics, mainContentMore} from '../components/DOMelements'
 
 export default class NewsCard {
     constructor() {
     }
-
+/*
     getTemplateCard(content, date){
         //const container = document.querySelector('.main-content__result');        
         const contentCard = document.createElement("div");
@@ -24,7 +24,7 @@ export default class NewsCard {
           </a>`);
           return contentCard;      //mainContentResult.appendChild(contentCard);    
     }
-
+*/
     showElement(elem, style) {
       elem.style.display = style;
     }
@@ -35,18 +35,21 @@ export default class NewsCard {
       this.showElement(requestError, 'none');
       this.showElement(preloaderEmpty, 'none');
       this.showElement(preloaderLoad, 'flex');
-      this.showElement(moreCardsButton, 'none');
+      this.showElement(mainContentMore, 'none');
       searchInput.setAttribute('disabled', true);
+      bigBlueSearchButton.setAttribute('disabled', true);
       bigBlueSearchButton.setAttribute('style', 'background: #808080;');
     }
 
-    outputError() {
-      //this.showElement(mainContent, 'block');
-      this.showElement(linkToAnalytics, 'none');//
-      this.showElement(requestError, 'flex');//
-      this.showElement(preloaderEmpty, 'none');
+    outputError() {//+
+      this.showElement(mainContent, 'block');
       this.showElement(preloaderLoad, 'none');//
-      this.showElement(moreCardsButton, 'none');//
+      this.showElement(linkToAnalytics, 'none');//
+      this.showElement(mainContentMore, 'none');//
+      this.showElement(requestError, 'flex');//
+      //this.showElement(preloaderEmpty, 'none');
+      
+      
       searchInput.removeAttribute('disabled');
       bigBlueSearchButton.removeAttribute('style');
       bigBlueSearchButton.removeAttribute('disabled');
@@ -58,7 +61,7 @@ export default class NewsCard {
       this.showElement(requestError, 'none');//
       this.showElement(preloaderEmpty, 'flex');//
       this.showElement(preloaderLoad, 'none');//
-      this.showElement(moreCardsButton, 'none');//
+      this.showElement(mainContentMore, 'none');//
       searchInput.removeAttribute('disabled');
       bigBlueSearchButton.removeAttribute('style');
       bigBlueSearchButton.removeAttribute('disabled');
@@ -171,7 +174,25 @@ export default class NewsCard {
           this.createCard(element, date);
         });
       }
+    }
 
+
+    _hiddenMoreButton() {
+      mainContentMore.style.display = 'none';
+    }
+
+    moreCards(dataStorage, date) {
+      this.posInStart = this.posInStart + 3;
+      for(let i = 0; i < 3; i++) {
+        if(i + this.posInStart >= dataStorage.length) {
+          this._hiddenMoreButton();
+        } else {
+          this.createCard(dataStorage[i + this.posInStart], date);
+          if(i + 1 + this.posInStart >= dataStorage.length) {
+            this._hiddenMoreButton();
+          }
+        }
+      }
     }
 
 

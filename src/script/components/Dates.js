@@ -10,12 +10,18 @@ export default class Dates {
     }
 
     dateForCards(date) {
-        console.log(date);
+        //console.log(date);
         const newDate = new Date(date);
-        console.log(newDate);
+        //console.log(newDate);
         const interminDate = new Date(newDate.getTime() + newDate.getTimezoneOffset() * 60000);
         const cardDate = interminDate.getDate() + ' ' + MONTHS_FOR_CARD[interminDate.getMonth()] + ', ' + interminDate.getFullYear();
         return cardDate;
+    }
+
+    titleTableData(date){
+        const newDate = new Date(date);
+        const interminDate = new Date(newDate.getTime() + newDate.getTimezoneOffset() * 60000); 
+        const titleMonth = 
     }
 
 }

@@ -6,6 +6,7 @@ import NewsCard from './components/NewsCard';
 import Dates from './components/Dates';
 import DataStorage from './modules/DataStorage';
 import Utils from './utils/Utils';
+import CheckRequest from './utils/CheckRequest';
 
 
 const newsCard = new NewsCard;
@@ -16,14 +17,18 @@ const newsApi = new NewsAPI(apiDate);
 
 const dataStorage = new DataStorage;
 const utils = new Utils;
+const checkRequest = new CheckRequest;
+
+//newsCard.outputError();
+//utils.removal();
 
 const readNews = () => {
     if(dataStorage.checkLocalStorage()) {
-        newsCard.outputVisible();
+        newsCard.outputInitial();
         if(dataStorage.loadFromStorage().length > 3) {
-            newsCard.outputVisible(mainContentMore, 'flex');
+            newsCard.showElement(mainContentMore, 'flex');
         } else {
-            newsCard.outputVisible(mainContentMore, 'none');
+            newsCard.showElement(mainContentMore, 'none');
         }
     newsCard.addCard(dataStorage.loadFromStorage(), dates());
     }
@@ -34,22 +39,10 @@ if(dataStorage.checkLocalStorage()) {
     readNews();
 }
 
-//newsCard.createCard();
-//newsCard.createCard();
-//console.log(newsCard.createCard());
-/*
-newsApi.getNews()
-.then (data => {
-    console.log(data);
-})
-.catch(error => {
-    console.log(`Ошибка ввода данных - ${error}`);
-});
-*/
-
 bigBlueSearchButton.addEventListener('click', () => {
-    let request = searchInput.value;
-    if(!!request) {
+    //let request = searchInput.value;
+    let request = checkRequest.validate();
+    if(request !=0) {
         utils.removal();
         newsCard.outputInitial;
         newsApi.getNews(request)
@@ -60,15 +53,16 @@ bigBlueSearchButton.addEventListener('click', () => {
                     dataStorage.saveQuery(request);// записываем запрос в локальный диск
                     dataStorage.saveInStorage(data);// записываем ответ в локальный диск
                     readNews();
-                }
-    //console.log(data)  
+                } 
 })
 .catch(error => {
+    newsCard.outputError();
     console.log(`Ошибка ввода данных - ${error}`);
 })
     }
-
-
 });
 
-moreCardsButton.addEventListener('click', () => console.log(11));
+moreCardsButton.addEventListener('click', () => {
+    newsCard.moreCards(dataStorage.loadFromStorage(), dates());
+    console.log('button');
+});
