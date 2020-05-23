@@ -1,5 +1,5 @@
 import {QUERY_REG} from '../constants/Constants';
-import {graphTextArray, graphInfoArray, graphLineArray, tableCaption, tableTitle} from '../components/DOMelements';
+import {graphTextArray, graphInfoArray, graphLineArray, tableCaption} from '../components/DOMelements';
 
 export default class Draw {
     constructor(date, dataStorage) {
@@ -18,11 +18,11 @@ export default class Draw {
         const month = this.date.titleTableData(this.apiDate.dayNow);
         const otherMonth = this.date.titleTableData(this.apiDate.searchInterval);
         const reg = new RegExp(otherMonth, 'gi');
-        const match = reg.test(dayNow);
+        const match = reg.test(month);
         if(match) {
-            tableTitle.textContent = `Дата (${month})`;
+            tableCaption.textContent = `Дата (${month})`;
         } else {
-            tableTitle.textContent = `Дата (${otherMonth} - ${month})`;
+            tableCaption.textContent = `Дата (${otherMonth} - ${month})`;
         }
     }
 
@@ -38,6 +38,7 @@ export default class Draw {
             if(count > 0) graphLineArray[index].style.minWidth = `12px`;
             
             element.textContent = count;
+            //console.log(count);
             graphLineArray[index].style.width = `${count}%`;
         });
 
@@ -46,15 +47,18 @@ export default class Draw {
     _queryCount() {
         const week = 7;
         const res = {};
+        let reg;
 
         for(let i = 0; i < week; i++) {
-            let reg = new RegExp(this.daysObj[`day${i}`], 'gi');
+            reg = new RegExp(this.daysObj[`day${i}`], 'gi');
             let count = 0;
 
-            this.dataStorage.forEach(element => {
+            this.dataStorage.forEach((element) => {
                 const dateTime = new Date(element.publishedAt);
+                //console.log(dateTime);
                 const utsDate = new Date(dateTime.getTime() + dateTime.getTimezoneOffset() * 60000);
                 const day = this.date.convertDate(utsDate);
+                //console.log(day);
 
                 let match = reg.test(day);
                 reg.lastIndex = 0;
@@ -72,6 +76,7 @@ export default class Draw {
             });
             res[`day${i}`] = count;
         }
+        console.log(res);
         return res;
     }
 }

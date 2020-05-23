@@ -24,7 +24,7 @@ const checkRequest = new CheckRequest;
 
 const readNews = () => {
     if(dataStorage.checkLocalStorage()) {
-        newsCard.outputInitial();
+        newsCard.outputVisible();
         if(dataStorage.loadFromStorage().length > 3) {
             newsCard.showElement(mainContentMore, 'flex');
         } else {
@@ -41,10 +41,13 @@ if(dataStorage.checkLocalStorage()) {
 
 bigBlueSearchButton.addEventListener('click', () => {
     //let request = searchInput.value;
+    
     let request = checkRequest.validate();
+    console.log('button zhmyak ' + request);
     if(request !=0) {
+        console.log('button zhmyak ' + request);
         utils.removal();
-        newsCard.outputInitial;
+        newsCard.outputInitial();
         newsApi.getNews(request)
             .then (data => {
                 if(data.length === 0) {
@@ -56,7 +59,7 @@ bigBlueSearchButton.addEventListener('click', () => {
                 } 
 })
 .catch(error => {
-    newsCard.outputError();
+    newsCard.outputError();//+
     console.log(`Ошибка ввода данных - ${error}`);
 })
     }
@@ -64,5 +67,5 @@ bigBlueSearchButton.addEventListener('click', () => {
 
 moreCardsButton.addEventListener('click', () => {
     newsCard.moreCards(dataStorage.loadFromStorage(), dates());
-    console.log('button');
+    console.log('button zhmyak');//+
 });

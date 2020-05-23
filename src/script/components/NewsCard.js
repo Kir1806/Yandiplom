@@ -5,26 +5,7 @@ import {bigBlueSearchButton, mainContentResult, mainContent,
 export default class NewsCard {
     constructor() {
     }
-/*
-    getTemplateCard(content, date){
-        //const container = document.querySelector('.main-content__result');        
-        const contentCard = document.createElement("div");
-        contentCard.classList.add('main-content-card');
-        contentCard.insertAdjacentHTML('beforeend',`
-        <a class="card-link" href="${content.url}">
-        <img class="main-content-card__img" src='' alt="">
-          <div class="main-content-card__text">
-            <p class="card-text-data">${content.url}</p>
-            <div class="card-text-wrapper">
-              <h4 class="card-text-wrapper__title">${content.title}</h4>
-              <p class="card-text-wrapper__content">${content.description}</p>
-            </div>
-            <p class="card-text-print">${content.source.name}</p>
-          </div>
-          </a>`);
-          return contentCard;      //mainContentResult.appendChild(contentCard);    
-    }
-*/
+
     showElement(elem, style) {
       elem.style.display = style;
     }
@@ -122,7 +103,7 @@ export default class NewsCard {
       this.cardTextWrapper.classList.add('card-text-wrapper');
       this.cardTextWrapperTitle.classList.add('card-text-wrapper__title');
       this.cardTextWrapperContent.classList.add('card-text-wrapper__content');
-      this.cardTextPrint.classList.add('card-text-print');
+      this.cardTextPrint.classList.add('card-text-print');//---
 
       this.cardLink.appendChild(this.mainContentCard);
       this.mainContentCard.appendChild(this.mainContentCardText);
@@ -146,7 +127,7 @@ export default class NewsCard {
 
 
 
-    createCard(content, date){
+    _createCard(content, date){
       this._checkImage(content.urlToImage)
       .then((img) => {
         this._createCardBlock(content, date);
@@ -167,11 +148,11 @@ export default class NewsCard {
       }
       if(dataStorage.length > 3 ) {
         for(let i =0; i < 3; i++) {
-          this.createCard(dataStorage[i], date);
+          this._createCard(dataStorage[i], date);
         }
       } else {
         dataStorage.forEach((element) => {
-          this.createCard(element, date);
+          this._createCard(element, date);
         });
       }
     }
@@ -187,7 +168,7 @@ export default class NewsCard {
         if(i + this.posInStart >= dataStorage.length) {
           this._hiddenMoreButton();
         } else {
-          this.createCard(dataStorage[i + this.posInStart], date);
+          this._createCard(dataStorage[i + this.posInStart], date);
           if(i + 1 + this.posInStart >= dataStorage.length) {
             this._hiddenMoreButton();
           }

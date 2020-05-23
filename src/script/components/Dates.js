@@ -38,6 +38,7 @@ export default class Dates {
             search.setDate(search.getDate() - i);
             res[`day${i}`] = day;
         }
+        
         return res;
     }
 }
