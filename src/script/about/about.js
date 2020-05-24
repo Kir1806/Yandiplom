@@ -17,7 +17,7 @@ const maxCount = 20;
 
 gitHubApi.getCommits()
 .then(data => {
-    console.log(data);
+    
     let countCards = data.length;
     if(countCards === 0) {
         swiperWrapper.appendChild(commitCards.commitCardError('Коммиты не найдены'));

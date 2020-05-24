@@ -59,7 +59,7 @@ export default class Draw {
            
 
             this.dataStorage.forEach((element) => {
-                console.log(count + ' count');
+                //console.log(count + ' count');
                 const dateTime = new Date(element.publishedAt);
                 
                 const utsDate = new Date(dateTime.getTime() + dateTime.getTimezoneOffset() * 60000);
@@ -86,13 +86,9 @@ export default class Draw {
                 
             });
             res[`day${i}`] = count;
-            //console.log(res);
-        }
-        
-        //res.forEach((element, index) => {
-            console.log(res);
             
-        //});
+        }
+
         //console.log(res);
         //console.log(QUERY_REG);
         return res;

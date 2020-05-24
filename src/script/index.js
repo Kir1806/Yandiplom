@@ -43,9 +43,9 @@ bigBlueSearchButton.addEventListener('click', () => {
     //let request = searchInput.value;
     
     let request = checkRequest.validate();
-    console.log('button zhmyak ' + request);
+    //console.log('button zhmyak ' + request);
     if(request !=0) {
-        console.log('button zhmyak ' + request);
+        //console.log('button zhmyak ' + request);
         utils.removal();
         newsCard.outputInitial();
         newsApi.getNews(request)
@@ -67,5 +67,5 @@ bigBlueSearchButton.addEventListener('click', () => {
 
 moreCardsButton.addEventListener('click', () => {
     newsCard.moreCards(dataStorage.loadFromStorage(), dates());
-    console.log('button zhmyak');//+
+    //console.log('button zhmyak');//+
 });
