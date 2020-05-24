@@ -34,7 +34,10 @@ export default class Draw {
 
         graphInfoArray.forEach((element, index) => {
             let count = this._queryCount()[`day${index}`];
-            if(count === 0) element.style.color = '#000';
+            if(count === 0) {
+                element.style.color = '#000';
+                element.style.fontSize = '16px';
+            }
             if(count > 0) graphLineArray[index].style.minWidth = `12px`;
             
             element.textContent = count;
@@ -43,40 +46,55 @@ export default class Draw {
         });
 
     }
-
+//
     _queryCount() {
         const week = 7;
         const res = {};
         let reg;
+        let match, count;
 
         for(let i = 0; i < week; i++) {
             reg = new RegExp(this.daysObj[`day${i}`], 'gi');
-            let count = 0;
+            count = 0;
+           
 
             this.dataStorage.forEach((element) => {
+                console.log(count + ' count');
                 const dateTime = new Date(element.publishedAt);
-                //console.log(dateTime);
+                
                 const utsDate = new Date(dateTime.getTime() + dateTime.getTimezoneOffset() * 60000);
                 const day = this.date.convertDate(utsDate);
-                //console.log(day);
+                
 
-                let match = reg.test(day);
+                match = reg.test(day);
                 reg.lastIndex = 0;
+                //console.log(match);
 
                 if(match) {
                     let matchQuery = QUERY_REG.test(element.title);
                     QUERY_REG.lastIndex = 0;
                     let matchQueryDescription = QUERY_REG.test(element.description);
                     QUERY_REG.lastIndex = 0;
+                    //console.log(matchQuery + ' 1');
+                    //console.log(matchQueryDescription + ' 2');
+                    //console.log(element.description + ' 3');
 
                     if(matchQuery) count++;
-                    if(matchQueryDescription) count++;                
+                    if(matchQueryDescription) count++;             
 
                 }
+                
             });
             res[`day${i}`] = count;
+            //console.log(res);
         }
-        console.log(res);
+        
+        //res.forEach((element, index) => {
+            console.log(res);
+            
+        //});
+        //console.log(res);
+        //console.log(QUERY_REG);
         return res;
     }
 }

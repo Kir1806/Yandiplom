@@ -10,18 +10,20 @@ export default class Title {
         tableTitle.textContent = `Вы спросили: "${QUERY}"`;
         newsWeekCount.textContent = this.dataStorage.length;
     }
-//titleWeekCount
+
     _titleWeek(){
         const titleArray = [];
         let arrMatch;
         let count = 0;
         this.dataStorage.forEach((element, index) => {
             if(element.title != null ) {
-                titleArray[index] = element.title;
+                titleArray[index] = element.title;                
             }            
         });
+        //console.log(titleArray);
         titleArray.forEach(element => {
             arrMatch = element.match(QUERY_REG);
+            //console.log(arrMatch);
             if(arrMatch != null) count = count + arrMatch.length;
         });
 

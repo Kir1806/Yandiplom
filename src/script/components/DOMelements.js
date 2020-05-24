@@ -19,15 +19,15 @@ export const linkToAnalytics = document.querySelector('.main-header-wrapper'); /
 export const mainContentMore = document.querySelector('.main-content__more'); //контейнер с кнопкой больше карточек
 
 //Table
-export const tableTitle = document.querySelector('.paper-info__title'); //
-export const newsWeekCount = document.querySelector('.news-week-count') //
-export const newsTitleCount = document.querySelector('.title-week-count') // запросов всего
-export const tableCaption = document.querySelector('.table-caption') //заголовок таблицы
+export const tableTitle = document.querySelector('.paper-info__title'); // заголовок таблицы
+export const newsWeekCount = document.querySelector('.news-week-count') // упоминаний за неделю
+export const newsTitleCount = document.querySelector('.title-week-count') // упоминаний в заголовках
+export const tableCaption = document.querySelector('.table-caption') //
 const graphText = document.querySelectorAll('.table-graph__text') //недели
 const graphInfo = document.querySelectorAll('.text-line-wrapper__line-info-text') //дни
 const graphLine = document.querySelectorAll('.text-line-wrapper') // линии
 
-export const graphTextArray = Array.from(graphText);// null?
+export const graphTextArray = Array.from(graphText);
 export const graphInfoArray = Array.from(graphInfo);
 export const graphLineArray = Array.from(graphLine);
 

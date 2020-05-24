@@ -32,13 +32,14 @@ export default class Dates {
     getDayweek() {
         const search = SEARCH_INTERVAL;
         const res = {};
+        
         for( let i = 0; i < 7; i++) {
             search.setDate(search.getDate() + i);
             let day = this.convertDate(search);
             search.setDate(search.getDate() - i);
             res[`day${i}`] = day;
-        }
-        
+        } 
+        //console.log(res);//правильно
         return res;
     }
 }
