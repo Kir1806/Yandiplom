@@ -52,17 +52,20 @@ export default class Draw {
         const res = {};
         let reg;
         let match, count;
-
+        let m = 0;
         for(let i = 0; i < week; i++) {
             reg = new RegExp(this.daysObj[`day${i}`], 'gi');
             count = 0;
+            
+            //console.log(this.dataStorage);
            
 
             this.dataStorage.forEach((element) => {
-                //console.log(count + ' count');
+                //console.log(dataStorage);
                 const dateTime = new Date(element.publishedAt);
                 
                 const utsDate = new Date(dateTime.getTime() + dateTime.getTimezoneOffset() * 60000);
+                console.log(utsDate);
                 const day = this.date.convertDate(utsDate);
                 
 
@@ -71,16 +74,18 @@ export default class Draw {
                 //console.log(match);
 
                 if(match) {
+                    m = m + 1;
                     let matchQuery = QUERY_REG.test(element.title);
                     QUERY_REG.lastIndex = 0;
                     let matchQueryDescription = QUERY_REG.test(element.description);
                     QUERY_REG.lastIndex = 0;
-                    //console.log(matchQuery + ' 1');
+                    //console.log(QUERY_REG);
                     //console.log(matchQueryDescription + ' 2');
                     //console.log(element.description + ' 3');
 
                     if(matchQuery) count++;
-                    if(matchQueryDescription) count++;             
+                    if(matchQueryDescription) count++;
+                    //console.log(m);
 
                 }
                 
@@ -89,7 +94,7 @@ export default class Draw {
             
         }
 
-        //console.log(res);
+        //console.log(m);
         //console.log(QUERY_REG);
         return res;
     }
