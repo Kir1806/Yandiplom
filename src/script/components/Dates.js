@@ -1,4 +1,4 @@
-import {DAY_NOW, SEARCH_INTERVAL, MONTHS_FOR_CARD, MONTHS_TITLE, DAYS_TITLE} from '../constants/Constants';
+import {DAY_NOW, SEARCH_INTERVAL, MONTHS_FOR_CARD, MONTHS_TITLE, DAYS_TITLE, WEEK} from '../constants/Constants';
 
 export default class Dates {
 
@@ -33,7 +33,7 @@ export default class Dates {
         const search = SEARCH_INTERVAL;
         const res = {};
         
-        for( let i = 0; i < 7; i++) {
+        for( let i = 0; i < WEEK; i++) {
             search.setDate(search.getDate() + i);
             let day = this.convertDate(search);
             search.setDate(search.getDate() - i);

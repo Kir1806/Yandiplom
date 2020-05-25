@@ -3,6 +3,7 @@ import {searchInput} from '../components/DOMelements';
 
 export default class CheckRequest {
 
+        // защита от XSS и удаление пробелов
     _protectionXss(){
         const test = searchInput.value.trim().split('');
         test.forEach((element, index) => {
@@ -10,7 +11,7 @@ export default class CheckRequest {
         });
         return test.join('').replace(KILL_SPACE, ' ').trim();
     }
-
+    
     _updatePlaceholder(message) {
         searchInput.value = '';
         searchInput.setAttribute('placeholder', message);

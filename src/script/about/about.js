@@ -1,5 +1,6 @@
 
 import '../../pages/about.css';
+import {ERROR} from '../constants/Constants';
 
 import {swiperWrapper} from '../components/DOMelements';
 
@@ -32,6 +33,6 @@ gitHubApi.getCommits()
 })
 .catch(error => {
     swiperWrapper.appendChild(commitCards.commitCardError('Ошибка получения данных, обновите страницу'));
-    slider.activate(0);
+    slider.activate(ERROR);
     console.log(`Ошибка ввода данных - ${error}`);
 });

@@ -9,8 +9,7 @@ export default class NewsAPI {
     getNews (request) {
         return fetch(`${NEWS_API_URL}q=${request}&laungage=${NEWS_API_COUNTRY}&from=${this.searchInterval}&to=${this.dayNow}&pageSize=${NEWS_API_PAGES}&apiKey=${NEWS_API_KEY}`)
         .then(result => {
-            if(result.ok) {
-                console.log(this.dayNow + ' ' + this.searchInterval);
+            if(result.ok) {                
                 return result.json();
             }
         })

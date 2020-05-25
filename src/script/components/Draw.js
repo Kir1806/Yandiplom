@@ -1,4 +1,4 @@
-import {QUERY_REG} from '../constants/Constants';
+import {QUERY_REG, WEEK} from '../constants/Constants';
 import {graphTextArray, graphInfoArray, graphLineArray, tableCaption} from '../components/DOMelements';
 
 export default class Draw {
@@ -13,7 +13,7 @@ export default class Draw {
         this._tableData();
         this._drawGraph();
     }
-
+    // отображение заголовка шкалы
     _tableData() {
         const month = this.date.titleTableData(this.apiDate.dayNow);
         const otherMonth = this.date.titleTableData(this.apiDate.searchInterval);
@@ -25,11 +25,12 @@ export default class Draw {
             tableCaption.textContent = `Дата (${otherMonth} - ${month})`;
         }
     }
-
+    // отрисовка гистограммы
     _drawGraph() {
 
         graphTextArray.forEach((element, index) => {
             element.textContent = this.daysObj[`day${index}`];
+            if(element.textContent.includes('Вс')) element.style.color = 'red';
         });
 
         graphInfoArray.forEach((element, index) => {
@@ -46,14 +47,14 @@ export default class Draw {
         });
 
     }
-//
+    // подсчет количества запросов
     _queryCount() {
-        const week = 7;
+        
         const res = {};
         let reg;
         let match, count;
-        let m = 0;
-        for(let i = 0; i < week; i++) {
+        
+        for(let i = 0; i < WEEK; i++) {
             reg = new RegExp(this.daysObj[`day${i}`], 'gi');
             count = 0;
             
@@ -65,7 +66,7 @@ export default class Draw {
                 const dateTime = new Date(element.publishedAt);
                 
                 const utsDate = new Date(dateTime.getTime() + dateTime.getTimezoneOffset() * 60000);
-                console.log(utsDate);
+                //console.log(utsDate);
                 const day = this.date.convertDate(utsDate);
                 
 
@@ -74,7 +75,7 @@ export default class Draw {
                 //console.log(match);
 
                 if(match) {
-                    m = m + 1;
+                    
                     let matchQuery = QUERY_REG.test(element.title);
                     QUERY_REG.lastIndex = 0;
                     let matchQueryDescription = QUERY_REG.test(element.description);
@@ -85,7 +86,7 @@ export default class Draw {
 
                     if(matchQuery) count++;
                     if(matchQueryDescription) count++;
-                    //console.log(m);
+                    
 
                 }
                 
@@ -94,8 +95,6 @@ export default class Draw {
             
         }
 
-        //console.log(m);
-        //console.log(QUERY_REG);
         return res;
     }
 }

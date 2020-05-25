@@ -1,3 +1,5 @@
+import {NUMBER_CARDS} from '../constants/Constants'
+
 import {bigBlueSearchButton, mainContentResult, mainContent,
    searchInput, preloaderLoad, preloaderEmpty, 
    requestError, linkToAnalytics, mainContentMore} from '../components/DOMelements'
@@ -146,8 +148,8 @@ export default class NewsCard {
       if(lastQuery) {
         searchInput.value = lastQuery;
       }
-      if(dataStorage.length > 3 ) {
-        for(let i =0; i < 3; i++) {
+      if(dataStorage.length > NUMBER_CARDS ) {
+        for(let i =0; i < NUMBER_CARDS; i++) {
           this._createCard(dataStorage[i], date);
         }
       } else {
@@ -163,8 +165,8 @@ export default class NewsCard {
     }
 
     moreCards(dataStorage, date) {
-      this.posInStart = this.posInStart + 3;
-      for(let i = 0; i < 3; i++) {
+      this.posInStart = this.posInStart + NUMBER_CARDS;
+      for(let i = 0; i < NUMBER_CARDS; i++) {
         if(i + this.posInStart >= dataStorage.length) {
           this._hiddenMoreButton();
         } else {

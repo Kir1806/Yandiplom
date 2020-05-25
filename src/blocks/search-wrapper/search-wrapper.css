@@ -1,5 +1,8 @@
 @import url('./__input/search-wrapper__input.css');
 @import url('./__button/button.css');
+@import url('./placeholder-style/placeholder-style.css');
+
+
 
 .search-wrapper {
     position: relative;

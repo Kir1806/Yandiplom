@@ -5,12 +5,13 @@ export default class Title {
     constructor(dataStorage) {
         this.dataStorage = dataStorage;
     }
-
+    // заголовок таблицы
     _titleRequest() {
+        if(QUERY === null) tableTitle.textContent = `Вы ничего не спросили`;
         tableTitle.textContent = `Вы спросили: "${QUERY}"`;
         newsWeekCount.textContent = this.dataStorage.length;
     }
-
+    // количество упоминаний за неделю
     _titleWeek(){
         const titleArray = [];
         let arrMatch;
