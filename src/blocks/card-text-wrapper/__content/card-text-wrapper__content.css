@@ -1,20 +1,20 @@
 .card-text-wrapper__content {
+    width: 100%;
     font-family: 'Roboto Slab', sans-serif;
     font-style: normal;
-    font-weight: normal;
-    color: #1A1B22;
-    width: 100%;
+    font-weight: normal;       
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     font-size: 16px;
-    line-height: 22px;   
+    line-height: 20px;
+    color: #1A1B22;    
 }
 
 
 @media screen and (min-width: 320px) {
     .card-text-wrapper__content {
-        -webkit-line-clamp: 4;
+        -webkit-line-clamp: 3;
         -webkit-box-orient: vertical; 
     }
 }
@@ -22,14 +22,14 @@
 
 @media screen and (min-width: 768px) {
     .card-text-wrapper__content {
-        -webkit-line-clamp: 3;
+        -webkit-line-clamp: 4;
         -webkit-box-orient: vertical;   
     }
 }
 
 @media screen and (min-width: 1440px) {
     .card-text-wrapper__content {
-        -webkit-line-clamp: 4;
+        -webkit-line-clamp: 5;
         -webkit-box-orient: vertical;    
     }
 }

@@ -2,7 +2,7 @@
 @import url('./__caption/preloader-load__caption.css');
 
 .preloader-load {    
-    display: flex;
+    display: none;
     justify-content: center;
     position: relative;
     margin: 0 auto;

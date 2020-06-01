@@ -3,32 +3,33 @@
     font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
 }
 
 @media screen and (min-width: 320px){
     .card-text-wrapper__title {
         font-size: 22px;
         line-height: 24px;
-        margin-bottom: 8px;   
+        margin-bottom: 8px;
+        -webkit-line-clamp: 3;   
     }
 }
-
-
 @media screen and (min-width: 768px){
     .card-text-wrapper__title {
         font-size: 22px;
         line-height: 24px;
         margin-bottom: 10px; 
+        -webkit-line-clamp: 3;  
     }
 }
-
-
-
-
 @media screen and (min-width: 1440px) {
     .card-text-wrapper__title {
         font-size: 26px;
         line-height: 30px;
         margin-bottom: 10px;
+        -webkit-line-clamp: 3;  
     }
 }
